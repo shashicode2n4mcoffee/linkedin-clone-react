@@ -1,6 +1,6 @@
 import React from 'react';
 import '../scss/ForgotPassword.scss';
-import logo from '../assets/linkedin-logo.svg';
+import logo from '../Assets/linkedin-logo.svg';
 
 const ForgotPassword = () => {
   return (

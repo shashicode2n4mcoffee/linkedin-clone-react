@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/linkedin-logo.svg';
+import logo from '../Assets/linkedin-logo.svg';
 import '../scss/Login.scss';
 
 const Login = () => {
