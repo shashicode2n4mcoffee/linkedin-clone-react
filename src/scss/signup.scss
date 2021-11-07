@@ -78,5 +78,24 @@
         box-shadow: 0px 0px 8px 4px #cfcfcf inset;
       }
     }
+    .signup-route {
+      @include flex;
+      margin: auto;
+      margin-top: 1rem;
+      .signup-join {
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        font-size: 1rem;
+        font-weight: bolder;
+        color: $background-color-1 !important;
+        cursor: pointer;
+        transition: 0.3s ease-out;
+        border-radius: 2rem;
+        &:hover {
+          background-color: #98d8f4;
+          padding-left: 0.5rem;
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }

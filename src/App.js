@@ -1,14 +1,10 @@
 import './App.css';
-import ForgotPassword from './Pages/ForgotPassword';
-import Login from './Pages/Login';
-import Signup from './Pages/Signup';
+import MainRoutes from './Routes';
 
 function App() {
   return (
     <div className='App'>
-      {/* <Login/> */}
-      <Signup />
-      {/* <ForgotPassword /> */}
+      <MainRoutes />
     </div>
   );
 }
