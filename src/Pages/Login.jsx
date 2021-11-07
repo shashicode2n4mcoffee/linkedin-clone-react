@@ -4,6 +4,7 @@ import '../scss/Login.scss';
 import { loginUserAction } from '../Redux/Actions/Login';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { GoogleLogin } from 'react-google-login';
 
 const Login = () => {
   const [login, setLogin] = useState({});
@@ -14,6 +15,10 @@ const Login = () => {
     if (login.email && login.password) {
       dispatch(loginUserAction(login));
     }
+  };
+
+  const responseGoogle = (response) => {
+    console.log(response);
   };
 
   return (
@@ -53,9 +58,26 @@ const Login = () => {
           <span>or</span>
           <div className='login-dash'></div>
         </div>
-        <button className='core-button login-google'>
+
+        <GoogleLogin
+          clientId='458080364267-r3r16jn2flj2pkgd45820ftpri45c2kv.apps.googleusercontent.com'
+          render={(renderProps) => (
+            <button
+              onClick={renderProps.onClick}
+              disabled={renderProps.disabled}
+              className='core-button login-google'
+            >
+              Sign in with Google
+            </button>
+          )}
+          buttonText='Login'
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+          cookiePolicy={'single_host_origin'}
+        />
+        {/* <button className='core-button login-google'>
           Sign in with Google
-        </button>
+        </button> */}
       </div>
       <div className='signup-route'>
         <span>New to LinkedIn? </span>
