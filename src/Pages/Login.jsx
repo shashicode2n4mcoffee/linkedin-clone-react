@@ -3,22 +3,28 @@ import logo from '../Assets/linkedin-logo.svg';
 import '../scss/Login.scss';
 import { loginUserAction } from '../Redux/Actions/Login';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 
 const Login = () => {
   const [login, setLogin] = useState({});
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const onHandleSubmit = (e) => {
     e.preventDefault();
     console.log(login);
     if (login.email && login.password) {
       dispatch(loginUserAction(login));
+      navigate('/home');
     }
   };
 
   const responseGoogle = (response) => {
     console.log(response);
+    if (response.tokenId) {
+      navigate('/home');
+    }
   };
 
   return (
@@ -48,7 +54,9 @@ const Login = () => {
               setLogin({ ...login, [e.target.name]: e.target.value });
             }}
           />
-          <span className='login-forgotpassword'>Forgot Password ?</span>
+          <span className='login-forgotpassword'>
+            <Link to='/forgotpassword'>Forgot Password ?</Link>
+          </span>
           <button className='core-button login-submit' type='submit'>
             Sign in
           </button>

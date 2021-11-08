@@ -3,17 +3,19 @@ import '../scss/signup.scss';
 import logo from '../Assets/linkedin-logo.svg';
 import { useDispatch } from 'react-redux';
 import { registerInitiate } from '../Redux/Actions/Register';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [signup, setSignup] = useState({});
   const dispatch = useDispatch();
+  let navigate = useNavigate();
 
   const onHandleSubmit = (e) => {
     e.preventDefault();
     console.log(signup);
     if (signup.email && signup.password) {
       dispatch(registerInitiate(signup));
+      navigate('/home');
     }
   };
 
@@ -63,7 +65,7 @@ const Signup = () => {
         </button>
         <div className='signup-route'>
           <span>Already on LinkedIn?</span>
-          <Link to='/login'>
+          <Link to='/'>
             <span className='signup-join'>Signin</span>{' '}
           </Link>
         </div>

@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import '../scss/ForgotPassword.scss';
 import logo from '../Assets/linkedin-logo.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ForgotPassword = () => {
   const [fp, setFp] = useState({});
+  const navigate = useNavigate()
   const onHandleSubmit = (e) => {
     e.preventDefault();
     console.log(fp);
+    navigate("/")
   };
   return (
     <div className='fp'>
@@ -15,7 +17,7 @@ const ForgotPassword = () => {
         <img src={logo} alt='' />
       </div>
       <div className='fp-nav'>
-        <Link to='/login'>
+        <Link to='/'>
           <span className='fp-signin'>Sign In</span>{' '}
         </Link>
         <Link to='/register'>

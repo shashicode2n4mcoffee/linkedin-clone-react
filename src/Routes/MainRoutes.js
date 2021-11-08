@@ -14,7 +14,7 @@ const MainRoutes = () => {
         <Routes>
           <Route
             index
-            path='/'
+            path='/home'
             element={
               <Suspense fallback={<>....</>}>
                 <Home />
@@ -23,7 +23,7 @@ const MainRoutes = () => {
           />
           <Route
             exact
-            path='/login'
+            path='/'
             element={
               <Suspense fallback={<>....</>}>
                 <Login />
