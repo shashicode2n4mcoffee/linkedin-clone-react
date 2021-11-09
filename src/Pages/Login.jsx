@@ -68,7 +68,7 @@ const Login = () => {
         </div>
 
         <GoogleLogin
-          clientId='458080364267-r3r16jn2flj2pkgd45820ftpri45c2kv.apps.googleusercontent.com'
+          clientId=''
           render={(renderProps) => (
             <button
               onClick={renderProps.onClick}
