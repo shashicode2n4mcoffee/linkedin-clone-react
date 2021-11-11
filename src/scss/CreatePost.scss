@@ -1,0 +1,47 @@
+@import './mixin.scss';
+@import './variables.scss';
+
+.create-post {
+  background-color: #ffffff;
+  margin: 1rem;
+  width: 50%;
+  border-radius:.5rem;
+  min-width:30rem;
+  .create-post-input {
+    @include flex;
+    padding:1rem;
+    padding-bottom: .5rem;
+    .create-post-image {
+      width: 4rem;
+      padding: 0.5rem;
+      img {
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+    .input {
+      border-radius: 3rem;
+      margin: 0.5rem;
+    }
+  }
+  .create-post-options {
+    @include flex;
+    justify-content: space-around;
+    align-items: stretch;
+    .option{
+     padding: 1rem;
+     border-radius:.5rem;
+     margin: 0.5rem 0;
+     cursor: pointer;
+     span{
+      padding: 0.5rem;
+     
+     }
+     &:hover{
+      background-color: #000000;
+      color: #ffffff !important;
+      opacity: .2;
+     }
+    }
+  }
+}
